@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
+    <script src="PointLayer-geojson.js" type="text/javascript"></script>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
@@ -22,13 +23,7 @@
   var map = L.map('map').setView([40, -89], 10);
 	  
   //Add markers	 
-  var polygonPoints = [
-                [40, -89.1],
-                [40.1, -89.1],
-                [40.1, -89.15],
-                [40, -89.15]];
-	  
-  var poly = L.polygon(polygonPoints).addTo(map);
+L.geoJSON(PointLayer).addTo(map);
   	 
 
   // load a tile layer
