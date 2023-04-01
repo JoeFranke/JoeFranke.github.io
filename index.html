@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>My first map</title>
+  <title>Private School Locations in Illinois</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
@@ -20,7 +20,7 @@
   <script>
 
   // initialize the map
-  var map = L.map('map').setView([40, -89], 10);
+  var map = L.map('map').setView([40, -89], 6);
 	  
   //Add markers	 
 L.geoJSON(PointsLayer).addTo(map);
