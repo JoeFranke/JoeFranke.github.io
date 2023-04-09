@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>My first map</title>
+  <title>Universities</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
@@ -37,7 +37,6 @@ width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7;
   <div id="map">
 	</div>
   
-  <script type="text/javascript" src="Lab3.js"></script>
   <script type="text/javascript" src="secondEd.js"></script>
   
 <script>
@@ -92,10 +91,6 @@ function onEachFeature(feature, layer) {
 		});
 }
 
-const geojson = L.geoJson(IllinoisGJSON, {
-		style,
-		onEachFeature //This is the important new function connection 
-	}).addTo(map);
 const geojson = L.geoJson(universityGJSON, {
 	onEachFeature
 }).addTo(map);
