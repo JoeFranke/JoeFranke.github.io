@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
-<!--<style>
+<style>
 .info {
     padding: 6px 8px;
     font: 14px/16px Arial, Helvetica, sans-serif;
@@ -26,7 +26,7 @@ text-align: left; line-height: 18px; color: #555;
 .legend i { 
 width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; 
 }
-</style> -->
+</style>
   <style>
     #map{ width: 900px; height: 500px; }
   </style>
@@ -38,6 +38,7 @@ width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7;
 	</div>
   
   <script type="text/javascript" src="secondEd.js"></script>
+  <script type="text/javascript" src="Lab3.js"></script>
   
 <script>
   
@@ -91,11 +92,16 @@ function onEachFeature(feature, layer) {
 		});
 }
 
+const geojson = L.geoJson(IllinoisGJSON, {
+	style,
+	onEachFeature
+}).addTo(map);
+	
 const geojson = L.geoJson(universityGJSON, {
 	onEachFeature
 }).addTo(map);
 //locates the legend in the bottom right of the map
-/*var legend = L.control({position: 'bottomright'});
+var legend = L.control({position: 'bottomright'});
 
 //adds the legend to the map in a <div> 
 legend.onAdd = function (map) {
@@ -115,7 +121,7 @@ legend.onAdd = function (map) {
 };
 
 //adds the legend to the map
-legend.addTo(map); */
+legend.addTo(map); 
   </script>
 </body>
 </html>
