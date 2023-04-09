@@ -97,6 +97,7 @@ const geojson = L.geoJson(IllinoisGJSON, {
 		onEachFeature //This is the important new function connection 
 	}).addTo(map);
 const geojson2 = L.geoJson(universityGJSON, {
+	style,
 	onEachFeature
 }).addTo(map);
 //locates the legend in the bottom right of the map
