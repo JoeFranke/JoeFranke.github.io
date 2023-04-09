@@ -38,6 +38,7 @@ width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7;
 	</div>
   
   <script type="text/javascript" src="Lab3.js"></script>
+  <script type="text/javascript" src="secondEd.js"></script>
   
 <script>
   
@@ -74,11 +75,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			fillOpacity: 0.9
 		});
 		layer.bringToFront();
-		//info.update(layer.feature.properties); //we will use this in a bit.
+		info.update(layer.feature.properties); //we will use this in a bit.
 	}
 function resetHighlight(e) {
 		geojson.resetStyle(e.target);
-		//info.update();
+		info.update();
 	}
 function zoomToFeature(e) {
 	map.fitBounds(e.target.getBounds());
@@ -87,7 +88,7 @@ function onEachFeature(feature, layer) {
 		layer.on({
 			mouseover: highlightFeature,
 			mouseout: resetHighlight,
-			//click: zoomToFeature
+			click: zoomToFeature
 		});
 }
 
@@ -95,6 +96,9 @@ const geojson = L.geoJson(IllinoisGJSON, {
 		style,
 		onEachFeature //This is the important new function connection 
 	}).addTo(map);
+const geojson2 = L.geoJson(universityGJSON, {
+	onEachFeature
+}).addTo(map);
 //locates the legend in the bottom right of the map
 var legend = L.control({position: 'bottomright'});
 
