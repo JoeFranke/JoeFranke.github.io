@@ -85,7 +85,7 @@ function onEachFeature(feature, layer) {
 			mouseout: resetHighlight,
 			//click: zoomToFeature
 		});
-	const geojson = L.geoJson(IllinoisGJSON, {
+const geojson = L.geoJson(IllinoisGJSON, {
 		style,
 		onEachFeature //This is the important new function connection 
 	}).addTo(map);
