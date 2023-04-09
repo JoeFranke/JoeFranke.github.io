@@ -34,7 +34,8 @@ width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7;
   
 <body>
   
-  <div id="map"></div>
+  <div id="map">
+	</div>
   
   <script type="text/javascript" src="Lab3.js"></script>
   
@@ -65,7 +66,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         fillOpacity: 0.7 //shape file
     };
 }
-function highlightFeature(e) {
+	function highlightFeature(e) {
 		const layer = e.target;
 		layer.setStyle({
 			weight: 5,
@@ -85,6 +86,7 @@ function onEachFeature(feature, layer) {
 			mouseout: resetHighlight,
 			//click: zoomToFeature
 		});
+
 const geojson = L.geoJson(IllinoisGJSON, {
 		style,
 		onEachFeature //This is the important new function connection 
