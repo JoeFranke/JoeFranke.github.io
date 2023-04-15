@@ -83,7 +83,7 @@ info.onAdd = function (map) {
 };
 
 info.update = function (edu) {
-	const contents = edu ? `<b>${edu.COUNTYFP} %</b><br />${edu.STATEFP}` : 'Hover over a county';
+	const contents = edu ? `<b>${edu."COUNTYFP"} %</b><br />${edu."STATEFP"}` : 'Hover over a county';
 	this._div.innerHTML = `<h4>Population with Bachelor's Degree</h4>${contents}`;
 };
 
