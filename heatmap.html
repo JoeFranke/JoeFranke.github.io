@@ -42,7 +42,7 @@ $.getJSON("https://gist.githubusercontent.com/raechelportelli/91c6caf9af3daf85a7
  
 geojsonLayer.addData(data); */
 
-const geojson = L.geoJson(universityGJSON).addTo(map);
+const geojson = L.geoJson(universityGJSON)
 	  
 var heatData = [];
 	geojson.eachLayer(function(layer) {
