@@ -43,14 +43,8 @@ geojsonLayer.addData(data); */
 
 const geojson = L.geoJson(universityGJSON).addTo(map);
 	  
-var heatData = [];
-	geojson.eachLayer(function(layer) {
-		var latlng = layer.getLatLng();
-		var value = layer.value;
-		heatData.push([latlng.lat, latlng.lng, value]);
-	});
 
-var heatLayer = L.heatLayer(heatData, {
+var heatLayer = L.heatLayer(geojson, {
 				radius: 100,
 				blur: 10,
 				opacity: 1,
