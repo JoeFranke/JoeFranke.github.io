@@ -92,8 +92,8 @@ function styleConsumption(feature) {
     };
 }
 	  
-const production = L.geoJson(stateProduction,"Production", {
-		style, //refers to the style function above
+const production = L.geoJson(stateProduction, {
+		style(stateProduction, "Production"), //refers to the style function above
 	}).addTo(map1);
 
 const consumption = L.geoJson(state_consumption, {
