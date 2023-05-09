@@ -48,7 +48,7 @@ function getColor(EdNorm) {
 	  
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties.Production), //color by density attribute
+        fillColor: getColor(feature.properties["Production"]), //color by density attribute
         weight: 0.5, //line weight
         opacity: 1, //line opacity
         color: 'black', //line color
