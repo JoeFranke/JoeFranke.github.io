@@ -72,7 +72,7 @@ function getColor(EdNorm) {
                       '#FFEDA0';
 }
 	  
-function style(feature) {
+function style3(feature) {
     return {
         fillColor: getColor(feature.properties["Production"]), //color by density attribute
         weight: 0.5, //line weight
@@ -101,7 +101,7 @@ function style2(feature) {
 }
 	  
 const production = L.geoJson(stateProduction, {
-		style, //refers to the style function above
+		style3, //refers to the style function above
 	}).addTo(map1);
 
 const consumption = L.geoJson(state_consumption, {
