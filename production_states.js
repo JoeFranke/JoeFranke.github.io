@@ -1,4 +1,4 @@
-var state_production = {
+var stateProduction = {
 "type": "FeatureCollection",
 "name": "production_states",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4269" } },
