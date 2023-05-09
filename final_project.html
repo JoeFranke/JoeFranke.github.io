@@ -36,6 +36,30 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
   const production = L.geoJson(stateProduction).addTo(map);
 	  
+//function formats the shape color based on the attribute d's value
+
+function getColor(EdNorm) {
+    return EdNorm > 1000  ? '#BD0026' :
+           EdNorm > 500.91  ? '#E31A1C' :
+           EdNorm > 250  ? '#FC4E2A' :
+           EdNorm > 0  ? '#FD8D3C' :
+                      '#FFEDA0';
+}
+	  
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.Production), //color by density attribute
+        weight: 0.5, //line weight
+        opacity: 1, //line opacity
+        color: 'black', //line color
+        fillOpacity: 0.7 //shape file
+    };
+}
+	  
+	const production = L.geoJson(stateProduction, {
+			style, //refers to the style function above
+		}).addTo(map);
+	  
 /*var geojsonLayer = L.geoJSON(null, {
 			onEachFeature: function(feature, layer) {
 				// Optional: add popups or other interactions to each feature
