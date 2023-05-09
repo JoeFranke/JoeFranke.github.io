@@ -72,7 +72,7 @@ function getColor(EdNorm) {
                       '#FFEDA0';
 }
 	  
-function style(feature) {
+function style_production(feature) {
     return {
         fillColor: getColor(feature.properties["Production"]), //color by density attribute
         weight: 0.5, //line weight
@@ -81,13 +81,23 @@ function style(feature) {
         fillOpacity: 0.7 //shape file
     };
 }
+
+function style_consumption(feature) {
+    return {
+        fillColor: getColor(feature.properties["Consumption"]), //color by density attribute
+        weight: 0.5, //line weight
+        opacity: 1, //line opacity
+        color: 'black', //line color
+        fillOpacity: 0.7 //shape file
+    };
+}
 	  
 const production = L.geoJson(stateProduction, {
-		style, //refers to the style function above
+		style_production, //refers to the style function above
 	}).addTo(map1);
 
 const consumption = L.geoJson(state_consumption, {
-		style, //refers to the style function above
+		style_consumption, //refers to the style function above
 	}).addTo(map2);
 
 /*var geojsonLayer = L.geoJSON(null, {
