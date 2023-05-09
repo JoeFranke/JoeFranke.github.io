@@ -49,7 +49,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-  const production = L.geoJson(stateProduction).addTo(map);
+  //const production = L.geoJson(stateProduction).addTo(map);
 	  
 //function formats the shape color based on the attribute d's value
 
@@ -71,9 +71,9 @@ function style(feature) {
     };
 }
 	  
-	/*const production = L.geoJson(stateProduction, {
-			style, //refers to the style function above
-		}).addTo(map);*/
+const production = L.geoJson(stateProduction, {
+		style, //refers to the style function above
+	}).addTo(map);
 	  
 /*var geojsonLayer = L.geoJSON(null, {
 			onEachFeature: function(feature, layer) {
