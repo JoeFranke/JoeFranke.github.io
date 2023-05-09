@@ -32,7 +32,7 @@
   // initialize the map
   var prodMap = L.map('map1').setView([40.1020, -88.2272], 7);
 
-  const production = L.geoJson(stateProduction).addTo(map);
+  const production = L.geoJson(stateProduction).addTo(prodMap);
 	  
   var consMap = L.map('map2').setView([40.1020, -88.2272], 7);
 /*var geojsonLayer = L.geoJSON(null, {
