@@ -31,7 +31,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 	  
-/*var geojsonLayer = L.geoJSON(null, {
+var geojsonLayer = L.geoJSON(null, {
 			onEachFeature: function(feature, layer) {
 				// Optional: add popups or other interactions to each feature
 			}
@@ -40,7 +40,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 $.getJSON("https://gist.githubusercontent.com/raechelportelli/91c6caf9af3daf85a7a2fe1eec079a10/raw/28c42649557d8e286c54bc9ef97af4c17bafdd96/secondEd.geojson",
  function(data) {
  
-geojsonLayer.addData(data); */
+geojsonLayer.addData(data);
 
 const geojson = L.geoJson(universityGJSON)
 	  
