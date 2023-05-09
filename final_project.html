@@ -40,7 +40,9 @@ width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7;
   <div id="map1">
 	<script type="text/javascript" src="production_states.js"></script>
   </div>
-  <div id="map2"></div>
+  <div id="map2">
+	<script type="text/javascript" src="consumption_states.js"></script>
+  </div>
 	
 
   <script>
@@ -83,7 +85,11 @@ function style(feature) {
 const production = L.geoJson(stateProduction, {
 		style, //refers to the style function above
 	}).addTo(map1);
-	  
+
+const consumption = L.geoJson(state_consumption, {
+		style, //refers to the style function above
+	}).addTo(map2);
+
 /*var geojsonLayer = L.geoJSON(null, {
 			onEachFeature: function(feature, layer) {
 				// Optional: add popups or other interactions to each feature
