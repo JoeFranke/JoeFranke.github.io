@@ -81,10 +81,18 @@ function style(feature) {
         fillOpacity: 0.7 //shape file
     };
 }
+	  
+function getColor2(EdNorm) {
+    return EdNorm > 1000  ? '#BD0026' :
+           EdNorm > 500.91  ? '#E31A1C' :
+           EdNorm > 250  ? '#FC4E2A' :
+           EdNorm > 0  ? '#FD8D3C' :
+                      '#FFEDA0';
+}
 
 function style2(feature) {
     return {
-        fillColor: getColor(feature.properties["Consumption"]), //color by density attribute
+        fillColor: getColor2(feature.properties["Consumption"]), //color by density attribute
         weight: 0.5, //line weight
         opacity: 1, //line opacity
         color: 'black', //line color
@@ -93,7 +101,7 @@ function style2(feature) {
 }
 	  
 const production = L.geoJson(stateProduction, {
-		style2, //refers to the style function above
+		style, //refers to the style function above
 	}).addTo(map1);
 
 const consumption = L.geoJson(state_consumption, {
