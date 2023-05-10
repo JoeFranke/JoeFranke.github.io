@@ -49,8 +49,7 @@ width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7;
   <div id="map">
 	</div>
   
-  <script type="text/javascript" src="secondEd.js"></script>
-  <script type="text/javascript" src="Lab3.js"></script>
+  <script type="text/javascript" src="production_states.js"></script>
   
 <script>
   
@@ -83,7 +82,7 @@ info.onAdd = function (map) {
 };
 
 info.update = function (edu) {
-	const contents = edu ? `<b>${edu["IL-ED-Lab3_NormBach"]} %</b><br />${edu["IL-ED-Lab3_NAME"]}` : 'Hover over a county';
+	const contents = edu ? `<b>${edu["Production"]} %</b><br />${edu["NAME"]}` : 'Hover over a county';
 	this._div.innerHTML = `<h4>Population with Bachelor's Degree</h4>${contents}`;
 };
 
@@ -98,7 +97,7 @@ info.addTo(map);
 }
   function style(feature) {
     return {
-        fillColor: getColor(feature.properties["IL-ED-Lab3_NormBach"]), //color by density attribute
+        fillColor: getColor(feature.properties["Production"]), //color by density attribute
         weight: 0.5, //line weight
         opacity: 1, //line opacity
         color: 'black', //line color
@@ -130,17 +129,18 @@ function onEachFeature(feature, layer) {
 		});
 }
 
-const geojson = L.geoJson(IllinoisGJSON, {
+const geojson = L.geoJson(stateProduction, {
 	style,
 	onEachFeature
 }).addTo(map);
-	
+
+/*
 const geojson2 = L.geoJson(universityGJSON, {
 	onEachFeature
 }).addTo(map);
 //locates the legend in the bottom right of the map
 var legend = L.control({position: 'bottomright'});
-
+*/
 //adds the legend to the map in a <div> 
 legend.onAdd = function (map) {
 
