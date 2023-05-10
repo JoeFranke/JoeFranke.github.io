@@ -100,8 +100,36 @@ function style2(feature) {
     };
 }
 	  
+function highlightFeature(e) {
+		const layer = e.target;
+
+		layer.setStyle({
+			weight: 5,
+			color: 'white',
+			fillOpacity: 0.9
+		});
+
+		layer.bringToFront();
+
+		//info.update(layer.feature.properties); //we will use this in a bit.
+	}
+	  
+function resetHighlight(e) {
+		geojson.resetStyle(e.target);
+		//info.update();
+	}
+	  
+function onEachFeature(feature, layer) {
+	layer.on({
+		mouseover: highlightFeature,
+		mouseout: resetHighlight,
+		//click: zoomToFeature
+		});
+}
+	  
 const production = L.geoJson(stateProduction, {
-		style, //refers to the style function above
+		style,
+		onEachFeature
 	}).addTo(map1);
 
 const consumption = L.geoJson(state_consumption, {
