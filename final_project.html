@@ -127,9 +127,12 @@ function highlightFeature(e) {
 	}
 	  
 function resetHighlight(e) {
-		geojson.resetStyle(e.target);
+	    var layer = e.target;
+    layer.setStyle(StyleDefault);
+}
+	/*	geojson.resetStyle(e.target);
 		info.update();
-	}
+	}*/
 	  
 function onEachFeature(feature, layer) {
 	layer.on({
