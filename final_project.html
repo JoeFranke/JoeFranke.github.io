@@ -76,6 +76,17 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  
 //function formats the shape color based on the attribute d's value
 	  
+var popup = L.popup();
+	
+function onMapClick(e) {
+	popup
+	     .setLatLng(e.latlng)
+	     .setContent("You clicked the map at " + e.latlng.toString())
+	     .openOn(map);
+}
+
+map.on('click', onMapClick);
+	  
 var info = L.control();
 
 info.onAdd = function (map) {
