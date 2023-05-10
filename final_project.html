@@ -96,12 +96,15 @@ info.update = function (edu) {
 info.addTo(map);
   
   function getColor(EdNorm) {
-    return EdNorm > 9492.10  ? '#BD0026' :
-           EdNorm > 3186.9  ? '#E31A1C' :
-           EdNorm > 969.7  ? '#FC4E2A' :
-           EdNorm > 2.10  ? '#FD8D3C' :
-                      '#FFEDA0';
+  return EdNorm > 9492  ?  '#990000'
+	   EdNorm > 5020  ?  '#D7301F'
+	   EdNorm > 3838  ? '#EF6548' :
+           EdNorm > 2190  ? '#FC8D59' :
+           EdNorm > 970  ? '#FDBB84' :
+           EdNorm > 417  ? '#FDD49E' :
+                      '#FEF0D9';
 }
+
   function style(feature) {
     return {
         fillColor: getColor(feature.properties["Production_Num"]), //color by density attribute
@@ -176,11 +179,13 @@ info2.update = function (edu) {
 info2.addTo(map2);
 	
 function getColor2(EdNorm) {
-  return EdNorm > 6922.8  ? '#BD0026' :
-           EdNorm > 2610.6  ? '#E31A1C' :
-           EdNorm > 1069.5  ? '#FC4E2A' :
-           EdNorm > 125.7  ? '#FD8D3C' :
-                      '#FFEDA0';
+  return EdNorm > 6923  ?  '#990000'
+	   EdNorm > 3613  ?  '#D7301F'
+	   EdNorm > 2728  ? '#EF6548' :
+           EdNorm > 1894  ? '#FC8D59' :
+           EdNorm > 1213  ? '#FDBB84' :
+           EdNorm > 504  ? '#FDD49E' :
+                      '#FEF0D9';
 }
 
 function style2(feature) {
