@@ -155,7 +155,7 @@ function onMapClick2(e) {
 	     .openOn(map2);
 }
 
-map.on('click', onMapClick2);
+map2.on('click', onMapClick2);
 	
 var info2 = L.control();
 
@@ -198,11 +198,11 @@ function highlightFeature2(e) {
 			fillOpacity: 0.9
 		});
 		layer.bringToFront();
-		info.update(layer.feature.properties); //we will use this in a bit.
+		info2.update(layer.feature.properties); //we will use this in a bit.
 	}
 function resetHighlight2(e) {
 		geojson.resetStyle(e.target);
-		info.update();
+		info2.update();
 	}
 function zoomToFeature2(e) {
 	map.fitBounds(e.target.getBounds());
