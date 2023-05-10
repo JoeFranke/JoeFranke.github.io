@@ -76,32 +76,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  
 //function formats the shape color based on the attribute d's value
 	  
-var popup = L.popup();
-	
-function onMapClick(e) {
-	popup
-	     .setLatLng(e.latlng)
-	     .setContent("You clicked the map at " + e.latlng.toString())
-	     .openOn(map);
-}
-
-map.on('click', onMapClick);
-	  
-var info = L.control();
-
-info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-};
-	  
-info.update = function (edu) {
-	const contents = edu ? `<b>${edu["Production"]} %</b><br />${edu["Name"]}` : 'Hover over a county';
-	this._div.innerHTML = `<h4>Energy Production in Trillion BTU</h4>${contents}`;
-};
-
-info.addTo(map);
-	  
 function getColor(EdNorm) {
     return EdNorm > 1000  ? '#BD0026' :
            EdNorm > 500.91  ? '#E31A1C' :
@@ -176,6 +150,33 @@ const consumption = L.geoJson(state_consumption, {
 		onEachFeature
 	}).addTo(map2);
 
+	  
+	  
+var popup = L.popup();
+	
+function onMapClick(e) {
+	popup
+	     .setLatLng(e.latlng)
+	     .setContent("You clicked the map at " + e.latlng.toString())
+	     .openOn(map);
+}
+
+map.on('click', onMapClick);
+	  
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+	  
+info.update = function (edu) {
+	const contents = edu ? `<b>${edu["Production"]} %</b><br />${edu["Name"]}` : 'Hover over a county';
+	this._div.innerHTML = `<h4>Energy Production in Trillion BTU</h4>${contents}`;
+};
+
+info.addTo(map);
 /*var geojsonLayer = L.geoJSON(null, {
 			onEachFeature: function(feature, layer) {
 				// Optional: add popups or other interactions to each feature
