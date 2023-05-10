@@ -82,24 +82,6 @@ function style(feature) {
     };
 }
 	  
-function getColor2(EdNorm) {
-    return EdNorm > 1000  ? '#BD0026' :
-           EdNorm > 500.91  ? '#E31A1C' :
-           EdNorm > 250  ? '#FC4E2A' :
-           EdNorm > 0  ? '#FD8D3C' :
-                      '#FFEDA0';
-}
-
-function style2(feature) {
-    return {
-        fillColor: getColor2(feature.properties["Consumption"]), //color by density attribute
-        weight: 0.5, //line weight
-        opacity: 1, //line opacity
-        color: 'black', //line color
-        fillOpacity: 0.7 //shape file
-    };
-}
-	  
 function highlightFeature(e) {
 		const layer = e.target;
 
@@ -126,6 +108,25 @@ function onEachFeature(feature, layer) {
 		//click: zoomToFeature
 		});
 }
+	  
+function getColor2(EdNorm) {
+    return EdNorm > 1000  ? '#BD0026' :
+           EdNorm > 500.91  ? '#E31A1C' :
+           EdNorm > 250  ? '#FC4E2A' :
+           EdNorm > 0  ? '#FD8D3C' :
+                      '#FFEDA0';
+}
+
+function style2(feature) {
+    return {
+        fillColor: getColor2(feature.properties["Consumption"]), //color by density attribute
+        weight: 0.5, //line weight
+        opacity: 1, //line opacity
+        color: 'black', //line color
+        fillOpacity: 0.7 //shape file
+    };
+}
+	  
 	  
 const production = L.geoJson(stateProduction, {
 		style,
