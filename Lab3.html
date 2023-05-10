@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Universities</title>
+  <title>Energy Production and Consumption</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
@@ -89,8 +89,8 @@ info.onAdd = function (map) {
 };
 
 info.update = function (edu) {
-	const contents = edu ? `<b>${edu["Production"]} </b><br />${edu["NAME"]}` : 'Hover over a county';
-	this._div.innerHTML = `<h4>Population with Bachelor's Degree</h4>${contents}`;
+	const contents = edu ? `<b>${edu["Production"]} </b><br />${edu["NAME"]}` : 'Hover over a state';
+	this._div.innerHTML = `<h4>Annual Energy Production in Trillion BTU</h4>${contents}`;
 };
 
 info.addTo(map);
@@ -169,8 +169,8 @@ info2.onAdd = function (map) {
 };
 
 info2.update = function (edu) {
-	const contents = edu ? `<b>${edu["Consumption"]} </b><br />${edu["NAME"]}` : 'Hover over a county';
-	this._div.innerHTML = `<h4>Population with Bachelor's Degree</h4>${contents}`;
+	const contents = edu ? `<b>${edu["Consumption"]} </b><br />${edu["NAME"]}` : 'Hover over a state';
+	this._div.innerHTML = `<h4>Annual Consumption in Trillion BTU</h4>${contents}`;
 };
 
 info2.addTo(map2);
