@@ -86,7 +86,7 @@ info.onAdd = function (map) {
 };
 
 info.update = function (edu) {
-	const contents = edu ? `<b>${edu["Production"]} %</b><br />${edu["NAME"]}` : 'Hover over a county';
+	const contents = edu ? `<b>${edu["Production"]} </b><br />${edu["NAME"]}` : 'Hover over a county';
 	this._div.innerHTML = `<h4>Population with Bachelor's Degree</h4>${contents}`;
 };
 
@@ -166,16 +166,16 @@ info2.onAdd = function (map) {
 };
 
 info2.update = function (edu) {
-	const contents = edu ? `<b>${edu["Consumption"]} %</b><br />${edu["NAME"]}` : 'Hover over a county';
+	const contents = edu ? `<b>${edu["Consumption"]} </b><br />${edu["NAME"]}` : 'Hover over a county';
 	this._div.innerHTML = `<h4>Population with Bachelor's Degree</h4>${contents}`;
 };
 
 info2.addTo(map2);
 	
 function getColor2(EdNorm) {
-    return EdNorm > 1000  ? '#BD0026' :
-           EdNorm > 500.91  ? '#E31A1C' :
-           EdNorm > 250  ? '#FC4E2A' :
+  return EdNorm > 35.19  ? '#BD0026' :
+           EdNorm > 22.91  ? '#E31A1C' :
+           EdNorm > 12.87  ? '#FC4E2A' :
            EdNorm > 0  ? '#FD8D3C' :
                       '#FFEDA0';
 }
