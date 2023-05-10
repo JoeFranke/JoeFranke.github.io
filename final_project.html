@@ -64,6 +64,17 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  
 //function formats the shape color based on the attribute d's value
 
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
+	  
 function getColor(EdNorm) {
     return EdNorm > 1000  ? '#BD0026' :
            EdNorm > 500.91  ? '#E31A1C' :
@@ -104,7 +115,7 @@ function resetHighlight(e) {
 function onEachFeature(feature, layer) {
 	layer.on({
 		mouseover: highlightFeature,
-		onmouseleave: resetHighlight,
+		mouseout: resetHighlight,
 		//click: zoomToFeature
 		});
 }
