@@ -251,6 +251,27 @@ legend.onAdd = function (map) {
 //adds the legend to the map
 legend.addTo(map); 
 	
+var legend2 = L.control({position: 'bottomright'});
+//adds the legend to the map in a <div> 
+legend2.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [125.7 , 1069.5, 2610.6, 6922.8],
+        labels = [];
+
+// loop through our EdNorm intervals and generate a label and colored square
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+//adds the legend to the map
+legend2.addTo(map2); 
+	
   </script>
 </body>
 </html>
