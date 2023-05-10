@@ -104,7 +104,7 @@ function resetHighlight(e) {
 function onEachFeature(feature, layer) {
 	layer.on({
 		mouseover: highlightFeature,
-		onmouseout: resetHighlight,
+		onmouseleave: resetHighlight,
 		//click: zoomToFeature
 		});
 }
