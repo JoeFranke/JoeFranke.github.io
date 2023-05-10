@@ -165,9 +165,34 @@ function style2(feature) {
     };
 }
 	
+function highlightFeature2(e) {
+		const layer = e.target;
+		layer.setStyle({
+			weight: 5,
+			color: 'white',
+			fillOpacity: 0.9
+		});
+		layer.bringToFront();
+		info.update(layer.feature.properties); //we will use this in a bit.
+	}
+function resetHighlight2(e) {
+		geojson.resetStyle(e.target);
+		info.update();
+	}
+function zoomToFeature2(e) {
+	map.fitBounds(e.target.getBounds());
+}
+function onEachFeature2(feature, layer) {
+		layer.on({
+			mouseover: highlightFeature2,
+			mouseout: resetHighlight2,
+			click: zoomToFeature2
+		});
+}
+	
 const geojson2 = L.geoJson(state_consumption, {
 	style: style2,
-	onEachFeature
+	onEachFeature: onEachFeature2
 }).addTo(map2);
 	
 
