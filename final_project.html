@@ -96,8 +96,8 @@ info.update = function (edu) {
 info.addTo(map);
   
   function getColor(EdNorm) {
-  return EdNorm > 9492  ?  '#990000'
-	   EdNorm > 5020  ?  '#D7301F'
+  return EdNorm > 9492  ?  '#990000' :
+	   EdNorm > 5020  ?  '#D7301F' :
 	   EdNorm > 3838  ? '#EF6548' :
            EdNorm > 2190  ? '#FC8D59' :
            EdNorm > 970  ? '#FDBB84' :
@@ -179,8 +179,8 @@ info2.update = function (edu) {
 info2.addTo(map2);
 	
 function getColor2(EdNorm) {
-  return EdNorm > 6923  ?  '#990000'
-	   EdNorm > 3613  ?  '#D7301F'
+  return EdNorm > 6923  ?  '#990000' :
+	   EdNorm > 3613  ?  '#D7301F' :
 	   EdNorm > 2728  ? '#EF6548' :
            EdNorm > 1894  ? '#FC8D59' :
            EdNorm > 1213  ? '#FDBB84' :
