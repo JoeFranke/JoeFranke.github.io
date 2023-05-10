@@ -229,21 +229,14 @@ const geojson2 = L.geoJson(state_consumption, {
 }).addTo(map2);
 	
 
-/*
-const geojson2 = L.geoJson(universityGJSON, {
-	onEachFeature
-}).addTo(map);
-*/
-//locates the legend in the bottom right of the map
+
 var legend = L.control({position: 'bottomright'});
-//adds the legend to the map in a <div> 
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [417, 970, 2190, 3838, 5020, 9492],
         labels = [];
 
-// loop through our EdNorm intervals and generate a label and colored square
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
@@ -253,18 +246,15 @@ legend.onAdd = function (map) {
     return div;
 };
 
-//adds the legend to the map
 legend.addTo(map); 
 	
-var legend2 = L.control({position: 'bottomright'});
-//adds the legend to the map in a <div> 
+var legend2 = L.control({position: 'bottomright'}); 
 legend2.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [504 , 1213, 1894, 2728, 3613, 6923],
         labels = [];
 
-// loop through our EdNorm intervals and generate a label and colored square
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
